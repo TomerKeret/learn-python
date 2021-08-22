@@ -28,5 +28,18 @@ elif random_number == 9:
 else:
   answer = "Error"
   
-print(name + " asks: " + question)
-print("Magic 8 Ball's answer: " + answer)
+#print(name + " asks: " + question)
+
+#make sure that username exists to present it at the question, otherwise just present the question without the username
+if len(name) > 0:
+  print(name + " asks: " + question)
+else:
+  print("Question: " + question)
+
+#Make sure that there is a question, otherwise alert the user
+if len(question) > 0:
+  print("Magic 8-Ball's answer: " + answer)
+else:
+  print("You didn't type in a question, please try again")
+
+#print("Magic 8 Ball's answer: " + answer)
