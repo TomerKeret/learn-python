@@ -1,36 +1,33 @@
-# Sal's Shipping
-# Sonny Li
+weight = 41.5
+# user types the weight of the cargo
+cost = 0
+# initial cost is zero 
 
-weight = 80
+typeOfShipment = 'Premium'
+# The user needs to choose the type of the shipment - 'Ground', 'Premium' or 'Drone' 
 
-# Ground Shipping 🚚
-
-if weight <= 2:
-  cost_ground = weight * 1.5 + 20
-elif weight <= 6:
-  cost_ground = weight * 3.00 + 20
-elif weight <= 10:
-  cost_ground = weight * 4.00 + 20
+#Now we will decide the price(cost) based on the type of shipment and the weight of the package. 
+if typeOfShipment == 'Ground':
+  cost = 20
+  if weight <= 2:
+    cost += weight * 1.5
+  elif weight <= 6:
+    cost += weight * 3
+  elif weight <= 10:
+    cost += weight * 4
+  else:
+    cost += weight * 4.75
+elif typeOfShipment == 'Premium':
+    cost = 125
 else:
-  cost_ground = weight * 4.75 + 20
+  if weight <= 2:
+    cost = weight * 4.5
+  elif weight <= 6:
+    cost = weight * 9
+  elif weight <= 10:
+    cost = weight * 12
+  else:
+    cost = weight * 14.25 
 
-print("Ground Shipping $", cost_ground)
-      
-# Ground Shipping Premimum 🚚💨
-
-cost_ground_premium = 125.00
-
-print("Ground Shipping Premimium $", cost_ground_premium)
-
-# Drone Shipping 🛸
-
-if weight <= 2:
-  cost_drone = weight * 4.5
-elif weight <= 6:
-  cost_drone = weight * 9.00
-elif weight <= 10:
-  cost_drone = weight * 12.00
-else:
-  cost_drone = weight * 14.25
-
-print("Drone Shipping: $", cost_drone)
+#now we will print the cost to the user 
+print('The cost of your shipment is ' + str(cost))
